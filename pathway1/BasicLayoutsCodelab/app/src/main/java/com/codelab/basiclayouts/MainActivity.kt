@@ -45,6 +45,7 @@ import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
@@ -286,6 +287,14 @@ private fun SootheBottomNavigation(modifier: Modifier = Modifier) {
 @Composable
 fun MySootheApp() {
     // Implement composable here
+    MySootheTheme {
+        Scaffold(
+            bottomBar = { SootheBottomNavigation() }
+        ) { padding ->
+            HomeScreen(Modifier.padding(padding)
+            )
+        }
+    }
 }
 
 private val alignYourBodyData = listOf(
